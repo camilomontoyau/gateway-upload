@@ -29,6 +29,8 @@ app.post('/upload', upload.single('file'), (req: express.Request, res: express.R
   res.send('File uploaded successfully');
 });
 
+app.get('/health', (req, res) => res.status(200).send('OK'))
+
 // Error handling
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error(err.stack);

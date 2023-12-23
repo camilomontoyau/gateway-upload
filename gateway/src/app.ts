@@ -1,6 +1,8 @@
 import express from 'express'
 import  { createProxyMiddleware } from 'http-proxy-middleware'
 
+const POINT_TO = process.env.POINT_TO
+
 const app = express();
 
 // Allow JSON payloads up to 13 MB

@@ -1,0 +1,22 @@
+version: '3'
+services:
+  upload:
+    image: "node:18"
+    command: "npm i && npm start"
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+  gateway:
+    image: "node:18"
+    command: "npm i && npm start"
+    ports:
+      - "80:80"
+    environment:
+      - POINT_TO=uplaod:8080
+    depends_on:
+      - serviceName: upload
+        condition: service_healthy
