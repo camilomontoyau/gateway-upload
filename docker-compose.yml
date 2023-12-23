@@ -22,7 +22,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - POINT_TO=uplaod:8080
+      POINT_TO: "http://upload:8080"
     depends_on:
       upload:
         condition: service_healthy
