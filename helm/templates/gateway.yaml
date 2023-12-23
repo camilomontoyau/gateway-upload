@@ -42,6 +42,7 @@ metadata:
   name: gateway
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-dev
+    nginx.org/client-max-body-size: "13m"
 spec:
   ingressClassName: nginx
   rules:
