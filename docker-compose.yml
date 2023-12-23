@@ -3,6 +3,8 @@ services:
   upload:
     image: "node:18"
     command: "npm i && npm start"
+    copy: ./upload:/usr/src/app
+    working_dir: /usr/src/app
     ports:
       - "8080:8080"
     healthcheck:
@@ -13,6 +15,8 @@ services:
   gateway:
     image: "node:18"
     command: "npm i && npm start"
+    copy: ./gateway:/usr/src/app
+    working_dir: /usr/src/app
     ports:
       - "80:80"
     environment:
