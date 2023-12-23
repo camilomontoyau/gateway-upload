@@ -2,7 +2,7 @@ version: '3'
 services:
   upload:
     image: "node:18"
-    command: "npm i && npm start"
+    command: "npm start"
     volumes: 
       - ./upload:/usr/src/app
     working_dir: /usr/src/app
@@ -15,7 +15,7 @@ services:
       retries: 3
   gateway:
     image: "node:18"
-    command: "npm i && npm start"
+    command: "npm start"
     volumes: 
       - ./gateway:/usr/src/app
     working_dir: /usr/src/app
