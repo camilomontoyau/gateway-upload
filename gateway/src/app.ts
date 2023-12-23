@@ -3,6 +3,8 @@ import  { createProxyMiddleware } from 'http-proxy-middleware'
 
 const POINT_TO = process.env.POINT_TO
 
+console.log({POINT_TO})
+
 const app = express();
 
 // Allow JSON payloads up to 13 MB
@@ -12,7 +14,7 @@ const app = express();
 // app.use(express.urlencoded({ limit: '13mb', extended: true }));
 
 app.use('/', createProxyMiddleware({
-  target: 'http://localhost:8080',
+  target: POINT_TO,
   changeOrigin: true,
 }))
 
