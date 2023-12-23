@@ -18,7 +18,7 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 APP_NAME="api-gateway"
 
 # build name
-BUILD_NAME="$APP_NAME:gateway1"
+BUILD_NAME="$APP_NAME:upload1"
 
 echo "Building $BUILD_NAME"
 
