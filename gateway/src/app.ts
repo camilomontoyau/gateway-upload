@@ -7,7 +7,7 @@ const app = express();
 // app.use(express.json({ limit: '13mb' }));
 
 // Allow URL-encoded payloads up to 13 MB
-app.use(express.urlencoded({ limit: '13mb', extended: true }));
+// app.use(express.urlencoded({ limit: '13mb', extended: true }));
 
 app.use('/', createProxyMiddleware({
   target: 'http://localhost:8080',
