@@ -18,5 +18,5 @@ services:
     environment:
       - POINT_TO=uplaod:8080
     depends_on:
-      - serviceName: upload
+      upload:
         condition: service_healthy
